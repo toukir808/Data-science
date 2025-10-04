@@ -12,10 +12,12 @@ from sklearn.linear_model import LogisticRegression
 # with open("titanic_model.pkl", "wb") as f:
 #     pickle.dump(model, f)
 
+
+
 with open("titanic_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-st.title("🚢 Titanic Survival Prediction App")
+st.title(" Titanic Survival Prediction App")
 
 # ----------------------------
 # User Inputs
@@ -56,6 +58,6 @@ if st.button("Predict Survival"):
     prob = model.predict_proba(input_data)[0][1]
 
     if prediction == 1:
-        st.success(f"✅ This passenger would have SURVIVED with probability {prob:.2f}")
+        st.success(f" This passenger would have SURVIVED with probability {prob:.2f}")
     else:
-        st.error(f"❌ This passenger would NOT have survived (Survival Probability {prob:.2f})")
+        st.error(f" This passenger would NOT have survived (Survival Probability {prob:.2f})")
